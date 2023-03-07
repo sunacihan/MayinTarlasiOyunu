@@ -55,22 +55,24 @@ public class MineSweeper {
                 dizi[random1][random2] = "*";
             }
         }
-        for (int i = 0; i < this.satir; i++) {
-            for (int j = 0; j < this.sutun; j++) {
-                System.out.print(dizi[i][j]);
-            }
-            System.out.println();
-        }
+
         return dizi;
     }
 
     Scanner input=new Scanner(System.in);
     public void oyna(){
+        for (int i = 0; i < this.satir; i++) {
+            for (int j = 0; j < this.sutun; j++) {
+                System.out.print(this.girisTarlasi[i][j]+" ");
+            }
+            System.out.println();
+        }
         do {
             System.out.print("Satır giriniz:");
             this.satirgirdisi = input.nextInt();
             System.out.print("Sütun giriniz:");
             this.sutungirdisi = input.nextInt();
+
             if (this.satirgirdisi >= this.satir || this.sutungirdisi >= this.sutun || this.satirgirdisi < 0 || this.sutungirdisi < 0) {
                 System.out.println("Lütfen oyunun içinde bir değer giriniz!");
 
@@ -90,6 +92,7 @@ public class MineSweeper {
                     }
                     System.out.println();
                 }
+
 
                 if (count == this.bomba) {
                     System.out.println("Oyunu kazandınız!!!");
@@ -374,12 +377,7 @@ public void sayiYerlestir(){
         }
 
     }
-    for (int i = 0; i < this.satir; i++) {
-        for (int j = 0; j < this.sutun; j++) {
-            System.out.print(this.sayilar[i][j]);
-        }
-        System.out.println();
-    }
+
 }
 
 
