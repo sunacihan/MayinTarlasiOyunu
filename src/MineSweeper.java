@@ -84,12 +84,9 @@ public class MineSweeper {
                 this.girisTarlasi[this.satirgirdisi][this.sutungirdisi] = String.valueOf(this.sayilar[this.satirgirdisi][this.sutungirdisi]);
                 System.out.println("==============");
                 for (int i = 0; i < this.satir; i++) {
-                    int j;
-                    for (j = 0; j < this.sutun; j++) {
+                    for (int j = 0; j < this.sutun; j++) {
                         System.out.print(this.girisTarlasi[i][j] + " ");
-                        if(this.girisTarlasi[i][j].equals("-"));{
-                            count++;
-                        }
+                        if(this.girisTarlasi[i][j].equals("-")) count++;
                     }
                     System.out.println();
                 }
@@ -122,24 +119,14 @@ public void sayiYerlestir(){
                 if (this.bombaTarlasi[i][j + 1].equals("*")) {
                     //continue;
                 } else {
-
                     this.sayilar[i][j + 1] = this.sayilar[i][j + 1] + 1;
-
                 }
-                if (this.bombaTarlasi[i + 1][j + 1].equals("*")) {
-                    // continue;
-                } else {
+                if (!this.bombaTarlasi[i + 1][j + 1].equals("*")) {
                     this.sayilar[i + 1][j + 1] = this.sayilar[i + 1][j + 1] + 1;
-
                 }
-                if (this.bombaTarlasi[i + 1][j].equals("*")) {
-                    //  continue;
-                } else {
+                if (!this.bombaTarlasi[i + 1][j].equals("*")) {
                     this.sayilar[i + 1][j] = this.sayilar[i + 1][j] + 1;
-
                 }
-
-
             }
             if (this.bombaTarlasi[i][j].equals("*") && i == 0 && j > 0 && j < this.sutun - 1 && this.sutun != 2) {
                 if (this.bombaTarlasi[i][j - 1].equals("*")) {

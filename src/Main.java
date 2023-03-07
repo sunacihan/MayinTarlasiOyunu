@@ -11,5 +11,6 @@ public class Main {
             System.out.print("Sütün sayısını giriniz:");
             sutun = input.nextInt();
         } while (satir < 0 || sutun < 0);
-        MineSweeper mayin= new MineSweeper(satir,sutun);
-}}
+        MineSweeper mayin = new MineSweeper(satir, sutun);
+    }
+}
